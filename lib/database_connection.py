@@ -1,6 +1,9 @@
 import psycopg
 from psycopg.rows import dict_row
 import os
+from lib.recipes_repository import RecipesRepository
+from lib.recipes import Recipes
+
 
 # This class helps us interact with the database.
 # It wraps the underlying psycopg library that we are using.
@@ -8,7 +11,7 @@ import os
 # If the below seems too complex right now, that's OK.
 # That's why we have provided it!
 class DatabaseConnection:
-    DATABASE_NAME = "DEFAULT_MAKERS_PROJECT" # <-- CHANGE THIS!
+    DATABASE_NAME = "recipes" # <-- CHANGE THIS!
 
     # This method connects to PostgreSQL using the psycopg library. We connect
     # to localhost and select the database name given in argument.
